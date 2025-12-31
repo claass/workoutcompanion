@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Program Module</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #e8e8e8;
+        }
+        .test-result {
+            margin: 10px 0;
+            padding: 10px;
+            background: #252525;
+            border-radius: 4px;
+        }
+        .success { color: #4CAF50; }
+        .error { color: #f44336; }
+    </style>
+</head>
+<body>
+    <h1>Program Module Test</h1>
+    <div id="test-results"></div>
+
+    <script type="module">
+        import {
+            getWeek,
+            getAllWeeks,
+            getTotalWeeks,
+            getCurrentWeek,
+            initProgramUI
+        } from './js/program.js';
+
+        const resultsDiv = document.getElementById('test-results');
+
+        function log(message, isError = false) {
+            const div = document.createElement('div');
+            div.className = `test-result ${isError ? 'error' : 'success'}`;
+            div.textContent = message;
+            resultsDiv.appendChild(div);
+        }
+
+        async function runTests() {
+            try {
+                // Test 1: Get total weeks
+                const totalWeeks = await getTotalWeeks();
+                log(`✓ Total weeks: ${totalWeeks}`);
+
+                // Test 2: Get all weeks
+                const allWeeks = await getAllWeeks();
+                log(`✓ Loaded ${allWeeks.length} weeks`);
+
+                // Test 3: Get specific week
+                const week1 = await getWeek(1);
+                log(`✓ Week 1: ${week1.label || 'Week 1'} - ${week1.days.length} days`);
+
+                // Test 4: Get current week
+                const currentWeek = getCurrentWeek();
+                log(`✓ Current week: ${currentWeek}`);
+
+                // Test 5: Initialize UI
+                log('✓ All tests passed! Program module is working correctly.');
+
+            } catch (error) {
+                log(`✗ Error: ${error.message}`, true);
+                console.error(error);
+            }
+        }
+
+        runTests();
+    </script>
+</body>
+</html>

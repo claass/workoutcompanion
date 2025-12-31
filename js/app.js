@@ -54,6 +54,28 @@ class MinMaxApp {
             selectedScreen.classList.add('active');
             this.currentTab = tabName;
             this.saveActiveTab(tabName);
+
+            // Trigger screen-specific initialization if needed
+            this.onTabActivated(tabName);
+        }
+    }
+
+    /**
+     * Handle tab activation events
+     * @param {string} tabName - The name of the activated tab
+     */
+    async onTabActivated(tabName) {
+        // Refresh Program screen when activated to show updated completion status
+        if (tabName === 'program') {
+            // Dynamically import and refresh program UI
+            try {
+                const { initProgramUI } = await import('./program.js');
+                if (initProgramUI) {
+                    await initProgramUI();
+                }
+            } catch (error) {
+                console.error('Failed to refresh program UI:', error);
+            }
         }
     }
 

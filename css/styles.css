@@ -251,6 +251,334 @@ button:focus-visible {
 }
 
 /* ========================================
+   Program Screen Styles
+   ======================================== */
+
+/* Program Header */
+.program-header {
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
+
+.program-header h1 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.program-subtitle {
+    font-size: 0.875rem;
+    color: var(--color-text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Week Timeline */
+.week-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding-bottom: var(--spacing-xl);
+}
+
+/* Week Card */
+.week-card {
+    background-color: var(--color-card);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    border: 2px solid transparent;
+}
+
+.week-card:hover {
+    border-color: rgba(212, 175, 55, 0.3);
+    transform: translateY(-2px);
+}
+
+.week-card:active {
+    transform: translateY(0);
+}
+
+.week-card.current-week {
+    border-color: var(--color-gold);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.week-card.completed-week {
+    opacity: 0.9;
+}
+
+.week-card.future-week {
+    opacity: 0.6;
+}
+
+/* Week Card Header */
+.week-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.week-number {
+    font-family: var(--font-header);
+    font-size: 1.5rem;
+    color: var(--color-gold);
+}
+
+.week-label {
+    font-size: 0.875rem;
+    color: var(--color-text-dim);
+    margin-top: var(--spacing-xs);
+}
+
+.week-status {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.checkmark-icon {
+    width: 20px;
+    height: 20px;
+    stroke: var(--color-gold);
+}
+
+/* Day Indicators */
+.day-indicators {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.day-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.day-indicator-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid var(--color-text-dim);
+    background-color: transparent;
+    transition: all var(--transition-speed) ease;
+}
+
+.day-indicator.completed .day-indicator-circle {
+    background-color: var(--color-gold);
+    border-color: var(--color-gold);
+}
+
+.day-indicator-label {
+    font-size: 0.625rem;
+    color: var(--color-text-dim);
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Completion Summary */
+.completion-summary {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--color-text);
+    margin-top: var(--spacing-sm);
+}
+
+.completion-summary.complete {
+    color: var(--color-gold);
+    font-weight: 600;
+}
+
+/* ========================================
+   Modal Styles
+   ======================================== */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2000;
+    display: none;
+    align-items: flex-end;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.2s ease;
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--color-dark);
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    max-height: 80vh;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow-y: auto;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-dark);
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal-header h2 {
+    color: var(--color-gold);
+    font-size: 1.5rem;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: var(--color-text);
+    padding: var(--spacing-xs);
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    border-radius: var(--border-radius);
+}
+
+.modal-close:hover {
+    background-color: rgba(212, 175, 55, 0.1);
+    color: var(--color-gold);
+}
+
+.modal-close svg {
+    display: block;
+}
+
+/* Modal Day Cards */
+.modal-days {
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.day-card {
+    background-color: var(--color-card);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    border: 2px solid transparent;
+    transition: all var(--transition-speed) ease;
+}
+
+.day-card.completed {
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+.day-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-md);
+}
+
+.day-type {
+    font-family: var(--font-header);
+    font-size: 1.25rem;
+    color: var(--color-text);
+}
+
+.day-status {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--spacing-xs);
+}
+
+.status-badge {
+    font-size: 0.75rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.status-badge.completed {
+    background-color: rgba(212, 175, 55, 0.2);
+    color: var(--color-gold);
+}
+
+.status-badge.not-started {
+    background-color: rgba(160, 160, 160, 0.1);
+    color: var(--color-text-dim);
+}
+
+.completion-date {
+    font-size: 0.75rem;
+    color: var(--color-text-dim);
+}
+
+.day-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-dim);
+    font-size: 0.875rem;
+}
+
+.day-info-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.start-workout-btn {
+    width: 100%;
+    padding: var(--spacing-md);
+    background-color: var(--color-gold);
+    color: var(--color-dark);
+    border: none;
+    border-radius: var(--border-radius);
+    font-family: var(--font-header);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+}
+
+.start-workout-btn:hover {
+    background-color: #c29d2f;
+    transform: translateY(-1px);
+}
+
+.start-workout-btn:active {
+    transform: translateY(0);
+}
+
+/* ========================================
    Responsive Breakpoints
    ======================================== */
 
@@ -276,6 +604,19 @@ button:focus-visible {
     .tab-icon {
         width: 28px;
         height: 28px;
+    }
+
+    .day-indicators {
+        gap: var(--spacing-md);
+    }
+
+    .day-indicator-circle {
+        width: 40px;
+        height: 40px;
+    }
+
+    .day-indicator-label {
+        font-size: 0.75rem;
     }
 }
 
