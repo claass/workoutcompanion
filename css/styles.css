@@ -1,0 +1,287 @@
+/* ========================================
+   CSS Custom Properties - Iron Forge Theme
+   ======================================== */
+:root {
+    --color-gold: #d4af37;
+    --color-dark: #1a1a1a;
+    --color-card: #252525;
+    --color-text: #e8e8e8;
+    --color-text-dim: #a0a0a0;
+
+    --font-header: 'Oswald', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --transition-speed: 0.3s;
+    --border-radius: 8px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+
+    --touch-target: 44px;
+    --nav-height: 72px;
+}
+
+/* ========================================
+   Reset & Base Styles
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-dark);
+    color: var(--color-text);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-header);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-text);
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+
+/* ========================================
+   Dark Scrollbar Styling
+   ======================================== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-card);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #303030;
+}
+
+/* Firefox scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-card) var(--color-dark);
+}
+
+/* ========================================
+   App Layout
+   ======================================== */
+#app {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* ========================================
+   Screen System
+   ======================================== */
+.screen {
+    display: none;
+    flex: 1;
+    width: 100%;
+    min-height: calc(100vh - var(--nav-height));
+    padding-bottom: var(--nav-height);
+    animation: fadeIn var(--transition-speed) ease-in-out;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.screen-content {
+    padding: var(--spacing-lg);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.screen-content h1 {
+    color: var(--color-gold);
+    margin-bottom: var(--spacing-lg);
+}
+
+.screen-content p {
+    color: var(--color-text-dim);
+}
+
+/* ========================================
+   Bottom Tab Navigation
+   ======================================== */
+.tab-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: var(--nav-height);
+    background-color: var(--color-card);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: var(--spacing-sm);
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    z-index: 1000;
+}
+
+.tab-button {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    background: none;
+    border: none;
+    color: var(--color-text-dim);
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    min-height: var(--touch-target);
+    min-width: var(--touch-target);
+    transition: all var(--transition-speed) ease;
+    border-radius: var(--border-radius);
+    position: relative;
+}
+
+.tab-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background-color: var(--color-gold);
+    transition: width var(--transition-speed) ease;
+    border-radius: 0 0 3px 3px;
+}
+
+.tab-button:active {
+    transform: scale(0.95);
+}
+
+.tab-button.active {
+    color: var(--color-gold);
+}
+
+.tab-button.active::before {
+    width: 60%;
+}
+
+.tab-icon {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    transition: transform var(--transition-speed) ease;
+}
+
+.tab-button.active .tab-icon {
+    transform: scale(1.1);
+}
+
+.tab-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* ========================================
+   Interactive Elements
+   ======================================== */
+button {
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+}
+
+button:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+.card {
+    background-color: var(--color-card);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.text-gold {
+    color: var(--color-gold);
+}
+
+.text-dim {
+    color: var(--color-text-dim);
+}
+
+/* ========================================
+   Responsive Breakpoints
+   ======================================== */
+
+/* Mobile First - Base styles above are for 375px */
+
+/* Small tablets and larger phones */
+@media (min-width: 480px) {
+    .screen-content {
+        padding: var(--spacing-xl);
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+    :root {
+        --nav-height: 80px;
+    }
+
+    .tab-label {
+        font-size: 0.875rem;
+    }
+
+    .tab-icon {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .screen-content {
+        max-width: 800px;
+    }
+}
