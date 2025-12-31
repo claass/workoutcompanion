@@ -623,6 +623,3 @@ function clearWorkoutState() {
     console.error('Failed to clear workout state:', error);
   }
 }
-
-// Initialize when module is imported
-export { initWorkoutUI };
