@@ -1,0 +1,11 @@
+{
+  "name": "Min-Max Companion",
+  "short_name": "MinMax",
+  "description": "Your companion for Min-Max workout programming",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#d4af37",
+  "orientation": "portrait",
+  "icons": []
+}
