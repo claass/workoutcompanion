@@ -329,6 +329,3 @@ function formatStatDate(date) {
     year: 'numeric'
   });
 }
-
-// Export the init function
-export { initProgressUI };
