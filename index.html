@@ -13,6 +13,18 @@
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#d4af37">
+
+    <!-- Apple Mobile Web App -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Min-Max">
+    <link rel="apple-touch-icon" href="icons/icon-192.svg">
+
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -23,8 +35,18 @@
         <div id="program-screen" class="screen">
             <div class="screen-content">
                 <div class="program-header">
-                    <h1>12-Week Program</h1>
-                    <p class="program-subtitle">Min-Max Companion</p>
+                    <div class="program-header-content">
+                        <div>
+                            <h1>12-Week Program</h1>
+                            <p class="program-subtitle">Min-Max Companion</p>
+                        </div>
+                        <button class="settings-btn" id="settings-btn" aria-label="Settings">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path d="M12 1v6m0 6v6M1 12h6m6 0h6"></path>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Week Timeline Container -->
@@ -49,6 +71,64 @@
                 </div>
                 <div id="modal-week-days" class="modal-days">
                     <!-- Day cards will be dynamically generated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Modal -->
+        <div id="settings-modal" class="modal">
+            <div class="modal-backdrop"></div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Settings & Data</h2>
+                    <button class="modal-close" aria-label="Close modal">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <div class="settings-content">
+                    <div class="settings-section">
+                        <h3>Data Management</h3>
+                        <p class="settings-description">Export, import, or clear your workout data</p>
+
+                        <div class="settings-actions">
+                            <button class="btn-action" id="export-data-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                Export Data
+                            </button>
+
+                            <button class="btn-action" id="import-data-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                Import Data
+                            </button>
+
+                            <button class="btn-action danger" id="clear-data-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                </svg>
+                                Clear All Data
+                            </button>
+                        </div>
+
+                        <input type="file" id="import-file-input" accept=".json" style="display: none;">
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>About</h3>
+                        <p class="settings-description">Min-Max Companion v1.0</p>
+                        <p class="settings-description">12-Week Hypertrophy Training Program</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -110,5 +190,107 @@
     <script type="module" src="js/storage.js"></script>
     <script type="module" src="js/program.js"></script>
     <script src="js/app.js"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('Service Worker registered:', registration);
+                    })
+                    .catch(error => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
+
+    <!-- Settings Modal Handlers -->
+    <script type="module">
+        import { exportData, importData, clearAllData } from './js/storage.js';
+
+        // Settings modal handlers
+        document.addEventListener('DOMContentLoaded', () => {
+            const settingsBtn = document.getElementById('settings-btn');
+            const settingsModal = document.getElementById('settings-modal');
+            const exportBtn = document.getElementById('export-data-btn');
+            const importBtn = document.getElementById('import-data-btn');
+            const clearBtn = document.getElementById('clear-data-btn');
+            const fileInput = document.getElementById('import-file-input');
+
+            // Open settings modal
+            if (settingsBtn) {
+                settingsBtn.addEventListener('click', () => {
+                    settingsModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            // Close settings modal
+            const closeSettingsModal = () => {
+                settingsModal.classList.remove('active');
+                document.body.style.overflow = '';
+            };
+
+            settingsModal?.querySelector('.modal-backdrop')?.addEventListener('click', closeSettingsModal);
+            settingsModal?.querySelector('.modal-close')?.addEventListener('click', closeSettingsModal);
+
+            // Export data
+            if (exportBtn) {
+                exportBtn.addEventListener('click', () => {
+                    exportData();
+                });
+            }
+
+            // Import data
+            if (importBtn) {
+                importBtn.addEventListener('click', () => {
+                    fileInput.click();
+                });
+            }
+
+            if (fileInput) {
+                fileInput.addEventListener('change', (e) => {
+                    const file = e.target.files[0];
+                    if (!file) return;
+
+                    const reader = new FileReader();
+                    reader.onload = (event) => {
+                        const success = importData(event.target.result);
+                        if (success) {
+                            alert('Data imported successfully! Reloading...');
+                            window.location.reload();
+                        }
+                    };
+                    reader.readAsText(file);
+
+                    // Reset file input
+                    fileInput.value = '';
+                });
+            }
+
+            // Clear data
+            if (clearBtn) {
+                clearBtn.addEventListener('click', () => {
+                    const cleared = clearAllData();
+                    if (cleared) {
+                        closeSettingsModal();
+                        alert('All data cleared successfully! Reloading...');
+                        window.location.reload();
+                    }
+                });
+            }
+
+            // Close modals on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    if (settingsModal?.classList.contains('active')) {
+                        closeSettingsModal();
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
