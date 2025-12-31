@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Program Tab Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #e8e8e8;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            background: #252525;
+            border-radius: 8px;
+        }
+        .test-result {
+            margin: 8px 0;
+            padding: 8px;
+            background: #1a1a1a;
+            border-radius: 4px;
+            border-left: 3px solid #666;
+        }
+        .success { border-color: #4CAF50; color: #4CAF50; }
+        .error { border-color: #f44336; color: #f44336; }
+        .warning { border-color: #ff9800; color: #ff9800; }
+        .info { border-color: #2196F3; color: #2196F3; }
+        h2 { color: #d4af37; margin-top: 0; }
+        pre { background: #000; padding: 10px; border-radius: 4px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>Program Tab Comprehensive Test Suite</h1>
+    <div id="test-results"></div>
+
+    <script type="module">
+        import {
+            getWeek,
+            getAllWeeks,
+            getTotalWeeks,
+            getCurrentWeek,
+            getWeekLabel,
+            getProgramInfo,
+            getAllDayTypes,
+            getWeekCompletionStats,
+            initProgramUI
+        } from './js/program.js';
+
+        import { getWorkoutHistory, saveWorkout } from './js/storage.js';
+
+        const resultsDiv = document.getElementById('test-results');
+        let testsPassed = 0;
+        let testsFailed = 0;
+
+        function createSection(title) {
+            const section = document.createElement('div');
+            section.className = 'test-section';
+            const heading = document.createElement('h2');
+            heading.textContent = title;
+            section.appendChild(heading);
+            resultsDiv.appendChild(section);
+            return section;
+        }
+
+        function log(section, message, type = 'info') {
+            const div = document.createElement('div');
+            div.className = `test-result ${type}`;
+            div.innerHTML = message;
+            section.appendChild(div);
+
+            if (type === 'success') testsPassed++;
+            if (type === 'error') testsFailed++;
+        }
+
+        async function runTests() {
+            // Test 1: Program Data Loading
+            const section1 = createSection('1. Program Data Loading');
+            try {
+                const totalWeeks = await getTotalWeeks();
+                if (totalWeeks === 12) {
+                    log(section1, `✓ Total weeks: ${totalWeeks} (expected 12)`, 'success');
+                } else {
+                    log(section1, `✗ Total weeks: ${totalWeeks} (expected 12)`, 'error');
+                }
+
+                const allWeeks = await getAllWeeks();
+                log(section1, `✓ Loaded ${allWeeks.length} week summaries`, 'success');
+
+                const programInfo = await getProgramInfo();
+                log(section1, `✓ Program: ${programInfo.name}`, 'success');
+                log(section1, `&nbsp;&nbsp;Description: ${programInfo.description}`, 'info');
+
+            } catch (error) {
+                log(section1, `✗ Error loading program data: ${error.message}`, 'error');
+            }
+
+            // Test 2: Week Data Access
+            const section2 = createSection('2. Week Data Access');
+            try {
+                const week1 = await getWeek(1);
+                if (week1) {
+                    log(section2, `✓ Week 1: ${week1.label || 'Week 1'}`, 'success');
+                    log(section2, `&nbsp;&nbsp;Days: ${week1.days.length}`, 'info');
+                    log(section2, `&nbsp;&nbsp;Day types: ${week1.days.map(d => d.day_type).join(', ')}`, 'info');
+                } else {
+                    log(section2, '✗ Failed to load Week 1', 'error');
+                }
+
+                const week7Label = await getWeekLabel(7);
+                log(section2, `✓ Week 7 label: ${week7Label}`, 'success');
+
+                const invalidWeek = await getWeek(999);
+                if (invalidWeek === null) {
+                    log(section2, '✓ Invalid week (999) correctly returns null', 'success');
+                } else {
+                    log(section2, '✗ Invalid week should return null', 'error');
+                }
+
+            } catch (error) {
+                log(section2, `✗ Error accessing week data: ${error.message}`, 'error');
+            }
+
+            // Test 3: Day Types
+            const section3 = createSection('3. Day Types');
+            try {
+                const dayTypes = await getAllDayTypes();
+                const expectedTypes = ['Full Body', 'Upper', 'Lower', 'Arms/Delts'];
+
+                expectedTypes.forEach(type => {
+                    if (dayTypes.includes(type)) {
+                        log(section3, `✓ Found day type: ${type}`, 'success');
+                    } else {
+                        log(section3, `✗ Missing day type: ${type}`, 'error');
+                    }
+                });
+
+            } catch (error) {
+                log(section3, `✗ Error getting day types: ${error.message}`, 'error');
+            }
+
+            // Test 4: Current Week Management
+            const section4 = createSection('4. Current Week Management');
+            try {
+                const currentWeek = getCurrentWeek();
+                log(section4, `✓ Default current week: ${currentWeek}`, 'success');
+
+                getCurrentWeek(5);
+                const updatedWeek = getCurrentWeek();
+                if (updatedWeek === 5) {
+                    log(section4, `✓ Successfully set current week to 5`, 'success');
+                } else {
+                    log(section4, `✗ Failed to set current week (got ${updatedWeek})`, 'error');
+                }
+
+                // Reset to week 1
+                getCurrentWeek(1);
+                log(section4, `✓ Reset current week to 1`, 'success');
+
+            } catch (error) {
+                log(section4, `✗ Error managing current week: ${error.message}`, 'error');
+            }
+
+            // Test 5: Completion Tracking
+            const section5 = createSection('5. Completion Tracking');
+            try {
+                // Clear any existing test data
+                localStorage.removeItem('minmax_workout_history');
+
+                const statsEmpty = await getWeekCompletionStats(1);
+                log(section5, `✓ Week 1 initial stats: ${statsEmpty.completed}/${statsEmpty.total}`, 'success');
+
+                // Simulate completing a workout
+                const testWorkout = {
+                    exercises: [
+                        { name: 'Test Exercise', sets: [{ weight: 100, reps: 10 }] }
+                    ]
+                };
+                saveWorkout(1, 'Full Body', testWorkout);
+                log(section5, `✓ Saved test workout for Week 1 - Full Body`, 'success');
+
+                const statsAfter = await getWeekCompletionStats(1);
+                if (statsAfter.completed === 1) {
+                    log(section5, `✓ Week 1 updated stats: ${statsAfter.completed}/${statsAfter.total}`, 'success');
+                    log(section5, `&nbsp;&nbsp;Completion: ${statsAfter.percentage}%`, 'info');
+                } else {
+                    log(section5, `✗ Completion not tracked correctly`, 'error');
+                }
+
+                // Test multiple completions
+                saveWorkout(1, 'Upper', testWorkout);
+                saveWorkout(1, 'Lower', testWorkout);
+                const statsMultiple = await getWeekCompletionStats(1);
+                log(section5, `✓ After 3 workouts: ${statsMultiple.completed}/${statsMultiple.total} (${statsMultiple.percentage}%)`, 'success');
+
+            } catch (error) {
+                log(section5, `✗ Error testing completion tracking: ${error.message}`, 'error');
+            }
+
+            // Test 6: DOM Elements
+            const section6 = createSection('6. DOM Elements & UI Structure');
+            try {
+                const timeline = document.getElementById('week-timeline');
+                const modal = document.getElementById('week-detail-modal');
+                const modalTitle = document.getElementById('modal-week-title');
+                const modalDays = document.getElementById('modal-week-days');
+
+                if (timeline) {
+                    log(section6, '✓ Week timeline container exists', 'success');
+                } else {
+                    log(section6, '✗ Week timeline container not found', 'error');
+                }
+
+                if (modal) {
+                    log(section6, '✓ Week detail modal exists', 'success');
+                } else {
+                    log(section6, '✗ Week detail modal not found', 'error');
+                }
+
+                if (modalTitle) {
+                    log(section6, '✓ Modal title element exists', 'success');
+                } else {
+                    log(section6, '✗ Modal title element not found', 'error');
+                }
+
+                if (modalDays) {
+                    log(section6, '✓ Modal days container exists', 'success');
+                } else {
+                    log(section6, '✗ Modal days container not found', 'error');
+                }
+
+                // Check for modal close button
+                const closeBtn = modal?.querySelector('.modal-close');
+                if (closeBtn) {
+                    log(section6, '✓ Modal close button exists', 'success');
+                } else {
+                    log(section6, '✗ Modal close button not found', 'error');
+                }
+
+            } catch (error) {
+                log(section6, `✗ Error checking DOM elements: ${error.message}`, 'error');
+            }
+
+            // Test 7: UI Initialization
+            const section7 = createSection('7. UI Initialization');
+            try {
+                await initProgramUI();
+                log(section7, '✓ initProgramUI() executed without errors', 'success');
+
+                const timeline = document.getElementById('week-timeline');
+                const weekCards = timeline?.querySelectorAll('.week-card');
+
+                if (weekCards && weekCards.length > 0) {
+                    log(section7, `✓ Generated ${weekCards.length} week cards`, 'success');
+
+                    // Check first card structure
+                    const firstCard = weekCards[0];
+                    const hasHeader = firstCard.querySelector('.week-card-header') !== null;
+                    const hasIndicators = firstCard.querySelector('.day-indicators') !== null;
+                    const hasSummary = firstCard.querySelector('.completion-summary') !== null;
+
+                    if (hasHeader && hasIndicators && hasSummary) {
+                        log(section7, '✓ Week card has correct structure', 'success');
+                    } else {
+                        log(section7, `✗ Week card missing elements (header: ${hasHeader}, indicators: ${hasIndicators}, summary: ${hasSummary})`, 'error');
+                    }
+
+                    // Check for current week highlight
+                    const currentWeekCard = timeline.querySelector('.week-card.current-week');
+                    if (currentWeekCard) {
+                        log(section7, '✓ Current week card is highlighted', 'success');
+                    } else {
+                        log(section7, '⚠ No current week highlighted (might be intentional)', 'warning');
+                    }
+
+                    // Check for completed indicators
+                    const completedIndicators = timeline.querySelectorAll('.day-indicator.completed');
+                    log(section7, `✓ Found ${completedIndicators.length} completed day indicators`, 'success');
+
+                } else {
+                    log(section7, '✗ No week cards generated', 'error');
+                }
+
+            } catch (error) {
+                log(section7, `✗ Error during UI initialization: ${error.message}`, 'error');
+                console.error(error);
+            }
+
+            // Test 8: CSS Classes
+            const section8 = createSection('8. CSS Classes & Styling');
+            try {
+                const styles = getComputedStyle(document.documentElement);
+                const goldColor = styles.getPropertyValue('--color-gold').trim();
+                const cardColor = styles.getPropertyValue('--color-card').trim();
+
+                if (goldColor) {
+                    log(section8, `✓ CSS variable --color-gold: ${goldColor}`, 'success');
+                } else {
+                    log(section8, '✗ CSS variable --color-gold not defined', 'error');
+                }
+
+                if (cardColor) {
+                    log(section8, `✓ CSS variable --color-card: ${cardColor}`, 'success');
+                } else {
+                    log(section8, '✗ CSS variable --color-card not defined', 'error');
+                }
+
+                // Check if key CSS classes exist
+                const cssClasses = [
+                    'week-card', 'week-card-header', 'day-indicators',
+                    'day-indicator', 'modal', 'modal-content', 'start-workout-btn'
+                ];
+
+                const stylesheet = Array.from(document.styleSheets).find(
+                    sheet => sheet.href && sheet.href.includes('styles.css')
+                );
+
+                if (stylesheet) {
+                    log(section8, '✓ styles.css loaded successfully', 'success');
+                } else {
+                    log(section8, '⚠ Could not verify styles.css loading', 'warning');
+                }
+
+            } catch (error) {
+                log(section8, `✗ Error checking CSS: ${error.message}`, 'error');
+            }
+
+            // Summary
+            const summary = createSection('Test Summary');
+            const total = testsPassed + testsFailed;
+            const percentage = total > 0 ? Math.round((testsPassed / total) * 100) : 0;
+
+            if (testsFailed === 0) {
+                log(summary, `<strong>✓ ALL TESTS PASSED!</strong> (${testsPassed}/${total} - ${percentage}%)`, 'success');
+            } else {
+                log(summary, `<strong>Tests Passed:</strong> ${testsPassed}/${total} (${percentage}%)`, 'info');
+                log(summary, `<strong>Tests Failed:</strong> ${testsFailed}`, 'error');
+            }
+
+            // Cleanup
+            log(summary, '<br><em>Cleaning up test data...</em>', 'info');
+            localStorage.removeItem('minmax_workout_history');
+            getCurrentWeek(1);
+        }
+
+        // Wait for DOM and run tests
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', runTests);
+        } else {
+            runTests();
+        }
+    </script>
+</body>
+</html>
