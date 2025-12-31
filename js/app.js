@@ -76,6 +76,26 @@ class MinMaxApp {
             } catch (error) {
                 console.error('Failed to refresh program UI:', error);
             }
+        } else if (tabName === 'workout') {
+            // Initialize Workout screen
+            try {
+                const { initWorkoutUI } = await import('./workout.js');
+                if (initWorkoutUI) {
+                    await initWorkoutUI();
+                }
+            } catch (error) {
+                console.error('Failed to initialize workout UI:', error);
+            }
+        } else if (tabName === 'progress') {
+            // Initialize Progress screen
+            try {
+                const { initProgressUI } = await import('./progress.js');
+                if (initProgressUI) {
+                    await initProgressUI();
+                }
+            } catch (error) {
+                console.error('Failed to initialize progress UI:', error);
+            }
         }
     }
 
