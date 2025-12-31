@@ -1,5 +1,633 @@
 {
-  "name": "Min-Max Program",
-  "description": "Workout program data will be stored here",
-  "workouts": []
+  "program_name": "Min-Max Program 4x",
+  "program_description": "A 12-week hypertrophy program split into two blocks with a deload in the middle. Block 2 introduces advanced intensity techniques.",
+  "weeks": [
+    {
+      "week": 1,
+      "label": "Intro Week",
+      "days": [
+        {
+          "day_type": "Full Body",
+          "exercises": [
+            { "exercise": "Lying Leg Curl", "technique": "N/A", "warm_up": "1-2", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "1-2 min", "substitutions": ["Seated Leg Curl", "Nordic Ham Curl"], "notes": "Set machine for max stretch. Prevent butt from popping up." },
+            { "exercise": "Squat (Your Choice)", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [3, 2], "rest": "3-5 min", "substitutions": ["BB Back/Front", "Pendulum", "Hack", "Belt", "Smith"], "notes": "Various squat options allowed." },
+            { "exercise": "Barbell Incline Press", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [2, 1], "rest": "3-5 min", "substitutions": ["Smith Incline", "DB Incline"], "notes": "30-45 degree bench. 1s pause at bottom." },
+            { "exercise": "Incline DB Y-Raise", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["Cable Y-Raise", "Machine Lateral Raise"], "notes": "30 degree incline. Lift in Y shape." },
+            { "exercise": "Pull-Up (Wide Grip)", "technique": "N/A", "warm_up": "1-2", "sets": 2, "reps": "6-8", "rir": [2, 1], "rest": "2-3 min", "substitutions": ["Lat Pulldown", "1-Arm Cable Pulldown"], "notes": "Control negative. Full ROM." },
+            { "exercise": "Standing Calf Raise", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["Leg Press Calf Press", "Donkey Calf Raise"], "notes": "1-2s pause at bottom." }
+          ]
+        },
+        {
+          "day_type": "Upper",
+          "exercises": [
+            { "exercise": "Close-Grip Lat Pulldown", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "8-10", "rir": [2, 1], "rest": "2-3 min", "substitutions": ["Close-Grip Pull-Up", "1-Arm Cable Pulldown"], "notes": "Lean back 15 degrees. Drive elbows down." },
+            { "exercise": "Chest-Supported T-Bar Row", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "8-10", "rir": [2, 1], "rest": "2-3 min", "substitutions": ["Machine Row", "DB Row"], "notes": "Flare elbows 45 degrees. Squeeze blades." },
+            { "exercise": "Machine Shrug", "technique": "N/A", "warm_up": "1-2", "sets": 1, "reps": "6-8", "rir": [1], "rest": "1-2 min", "substitutions": ["Barbell Shrug", "Cable Shrug-In"], "notes": "Shrug to ears. Use straps." },
+            { "exercise": "Machine Chest Press", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "8-10", "rir": [2, 1], "rest": "3-5 min", "substitutions": ["Smith Bench", "DB Bench"], "notes": "1s pause at bottom." },
+            { "exercise": "High-Cable Lateral Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "1-2 min", "substitutions": ["DB Lateral Raise", "Machine Lateral Raise"], "notes": "Hip height cable. Deep stretch." },
+            { "exercise": "1-Arm Reverse Pec Deck", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["Lying Reverse DB Flye", "Reverse Cable Crossover"], "notes": "Large semi-circle sweep." },
+            { "exercise": "Cable Crunch", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "1-2 min", "substitutions": ["Weighted Crunch", "Machine Crunch"], "notes": "Round lower back. Mind-muscle connection." }
+          ]
+        },
+        {
+          "day_type": "Lower",
+          "exercises": [
+            { "exercise": "Leg Extension", "technique": "N/A", "warm_up": "1-2", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "1-2 min", "substitutions": ["Reverse Nordic", "Sissy Squat"], "notes": "Seat back far. Pull butt down into seat." },
+            { "exercise": "Barbell RDL", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "6-8", "rir": [3, 2], "rest": "2-3 min", "substitutions": ["DB RDL", "Seated Cable Deadlift"], "notes": "Glutes back. Neutral spine." },
+            { "exercise": "Machine Hip Thrust", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [2, 1], "rest": "2-3 min", "substitutions": ["BB Hip Thrust", "45 deg Hyper"], "notes": "Squeeze glutes. Control negative." },
+            { "exercise": "Leg Press", "technique": "N/A", "warm_up": "2-4", "sets": 1, "reps": "6-8", "rir": [1], "rest": "2-3 min", "substitutions": ["Smith Squat", "BB Squat"], "notes": "Lower feet for quad focus. No back rounding." },
+            { "exercise": "Standing Calf Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "1-2 min", "substitutions": ["Leg Press Calf Press", "Donkey Calf Raise"], "notes": "1-2s pause at bottom." }
+          ]
+        },
+        {
+          "day_type": "Arms/Delts",
+          "exercises": [
+            { "exercise": "Bayesian Cable Curl", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "1-2 min", "substitutions": ["Incline DB Curl", "Standing DB Curl"], "notes": "Optional lean forward. Deep stretch." },
+            { "exercise": "Overhead Cable Triceps Extension", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "1-2 min", "substitutions": ["Overhead DB Extension", "Skull Crusher"], "notes": "Deep stretch on triceps." },
+            { "exercise": "Modified Zottman Curl", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["DB Hammer Curl", "Preacher Hammer Curl"], "notes": "Hammer up, supinated down." },
+            { "exercise": "Cable Triceps Kickback", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "1-2 min", "substitutions": ["Seated Dip Machine", "Close-Grip Dip"], "notes": "Upper arm behind torso." },
+            { "exercise": "DB Wrist Curl", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "1-2 min", "substitutions": ["Cable Wrist Curl", "N/A"], "notes": "Smooth controlled reps." },
+            { "exercise": "DB Wrist Extension", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "1-2 min", "substitutions": ["Cable Wrist Extension", "N/A"], "notes": "Smooth controlled reps." },
+            { "exercise": "Alternating DB Curl", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["BB Curl", "EZ-Bar Curl"], "notes": "Slow controlled reps." },
+            { "exercise": "Machine Lateral Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "1-2 min", "substitutions": ["High-Cable Lateral Raise", "DB Lateral Raise"], "notes": "Squeeze side delt." },
+            { "exercise": "Dead Hang (optional)", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "N/A", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["N/A", "N/A"], "notes": "Add seconds each week." }
+          ]
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "days": [
+        {
+          "day_type": "Full Body",
+          "exercises": [
+            { "exercise": "Lying Leg Curl", "technique": "N/A", "warm_up": "1-2", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Seated Leg Curl", "Nordic Ham Curl"], "notes": "Set machine for max stretch. Prevent butt from popping up." },
+            { "exercise": "Squat (Your Choice)", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["BB Back/Front", "Pendulum", "Hack", "Belt", "Smith"], "notes": "Various squat options allowed." },
+            { "exercise": "Barbell Incline Press", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["Smith Incline", "DB Incline"], "notes": "30-45 degree bench. 1s pause at bottom." },
+            { "exercise": "Incline DB Y-Raise", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["Cable Y-Raise", "Machine Lateral Raise"], "notes": "30 degree incline. Lift in Y shape." },
+            { "exercise": "Pull-Up (Wide Grip)", "technique": "N/A", "warm_up": "1-2", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Lat Pulldown", "1-Arm Cable Pulldown"], "notes": "Control negative. Full ROM." },
+            { "exercise": "Standing Calf Raise", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["Leg Press Calf Press", "Donkey Calf Raise"], "notes": "1-2s pause at bottom." }
+          ]
+        },
+        {
+          "day_type": "Upper",
+          "exercises": [
+            { "exercise": "Close-Grip Lat Pulldown", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Close-Grip Pull-Up", "1-Arm Cable Pulldown"], "notes": "Lean back 15 degrees. Drive elbows down." },
+            { "exercise": "Chest-Supported T-Bar Row", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Machine Row", "DB Row"], "notes": "Flare elbows 45 degrees. Squeeze blades." },
+            { "exercise": "Machine Shrug", "technique": "N/A", "warm_up": "1-2", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["Barbell Shrug", "Cable Shrug-In"], "notes": "Shrug to ears. Use straps." },
+            { "exercise": "Machine Chest Press", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["Smith Bench", "DB Bench"], "notes": "1s pause at bottom." },
+            { "exercise": "High-Cable Lateral Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["DB Lateral Raise", "Machine Lateral Raise"], "notes": "Hip height cable. Deep stretch." },
+            { "exercise": "1-Arm Reverse Pec Deck", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["Lying Reverse DB Flye", "Reverse Cable Crossover"], "notes": "Large semi-circle sweep." },
+            { "exercise": "Cable Crunch", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Weighted Crunch", "Machine Crunch"], "notes": "Round lower back. Mind-muscle connection." }
+          ]
+        },
+        {
+          "day_type": "Lower",
+          "exercises": [
+            { "exercise": "Leg Extension", "technique": "N/A", "warm_up": "1-2", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Reverse Nordic", "Sissy Squat"], "notes": "Seat back far. Pull butt down into seat." },
+            { "exercise": "Barbell RDL", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "6-8", "rir": [2, 1], "rest": "2-3 min", "substitutions": ["DB RDL", "Seated Cable Deadlift"], "notes": "Glutes back. Neutral spine." },
+            { "exercise": "Machine Hip Thrust", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["BB Hip Thrust", "45 deg Hyper"], "notes": "Squeeze glutes. Control negative." },
+            { "exercise": "Leg Press", "technique": "N/A", "warm_up": "2-4", "sets": 1, "reps": "6-8", "rir": [0], "rest": "2-3 min", "substitutions": ["Smith Squat", "BB Squat"], "notes": "Lower feet for quad focus. No back rounding." },
+            { "exercise": "Standing Calf Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Leg Press Calf Press", "Donkey Calf Raise"], "notes": "1-2s pause at bottom." }
+          ]
+        },
+        {
+          "day_type": "Arms/Delts",
+          "exercises": [
+            { "exercise": "Bayesian Cable Curl", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Incline DB Curl", "Standing DB Curl"], "notes": "Optional lean forward. Deep stretch." },
+            { "exercise": "Overhead Cable Triceps Extension", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Overhead DB Extension", "Skull Crusher"], "notes": "Deep stretch on triceps." },
+            { "exercise": "Modified Zottman Curl", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["DB Hammer Curl", "Preacher Hammer Curl"], "notes": "Hammer up, supinated down." },
+            { "exercise": "Cable Triceps Kickback", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Seated Dip Machine", "Close-Grip Dip"], "notes": "Upper arm behind torso." },
+            { "exercise": "DB Wrist Curl", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Cable Wrist Curl", "N/A"], "notes": "Smooth controlled reps." },
+            { "exercise": "DB Wrist Extension", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Cable Wrist Extension", "N/A"], "notes": "Smooth controlled reps." },
+            { "exercise": "Alternating DB Curl", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["BB Curl", "EZ-Bar Curl"], "notes": "Slow controlled reps." },
+            { "exercise": "Machine Lateral Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["High-Cable Lateral Raise", "DB Lateral Raise"], "notes": "Squeeze side delt." },
+            { "exercise": "Dead Hang (optional)", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "N/A", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["N/A", "N/A"], "notes": "Add seconds each week." }
+          ]
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "days": [
+        {
+          "day_type": "Full Body",
+          "exercises": [
+            { "exercise": "Lying Leg Curl", "technique": "N/A", "warm_up": "1-2", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Seated Leg Curl", "Nordic Ham Curl"], "notes": "Set machine for max stretch. Prevent butt from popping up." },
+            { "exercise": "Squat (Your Choice)", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["BB Back/Front", "Pendulum", "Hack", "Belt", "Smith"], "notes": "Various squat options allowed." },
+            { "exercise": "Barbell Incline Press", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["Smith Incline", "DB Incline"], "notes": "30-45 degree bench. 1s pause at bottom." },
+            { "exercise": "Incline DB Y-Raise", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["Cable Y-Raise", "Machine Lateral Raise"], "notes": "30 degree incline. Lift in Y shape." },
+            { "exercise": "Pull-Up (Wide Grip)", "technique": "N/A", "warm_up": "1-2", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Lat Pulldown", "1-Arm Cable Pulldown"], "notes": "Control negative. Full ROM." },
+            { "exercise": "Standing Calf Raise", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["Leg Press Calf Press", "Donkey Calf Raise"], "notes": "1-2s pause at bottom." }
+          ]
+        },
+        {
+          "day_type": "Upper",
+          "exercises": [
+            { "exercise": "Close-Grip Lat Pulldown", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Close-Grip Pull-Up", "1-Arm Cable Pulldown"], "notes": "Lean back 15 degrees. Drive elbows down." },
+            { "exercise": "Chest-Supported T-Bar Row", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Machine Row", "DB Row"], "notes": "Flare elbows 45 degrees. Squeeze blades." },
+            { "exercise": "Machine Shrug", "technique": "N/A", "warm_up": "1-2", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["Barbell Shrug", "Cable Shrug-In"], "notes": "Shrug to ears. Use straps." },
+            { "exercise": "Machine Chest Press", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["Smith Bench", "DB Bench"], "notes": "1s pause at bottom." },
+            { "exercise": "High-Cable Lateral Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["DB Lateral Raise", "Machine Lateral Raise"], "notes": "Hip height cable. Deep stretch." },
+            { "exercise": "1-Arm Reverse Pec Deck", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["Lying Reverse DB Flye", "Reverse Cable Crossover"], "notes": "Large semi-circle sweep." },
+            { "exercise": "Cable Crunch", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Weighted Crunch", "Machine Crunch"], "notes": "Round lower back. Mind-muscle connection." }
+          ]
+        },
+        {
+          "day_type": "Lower",
+          "exercises": [
+            { "exercise": "Leg Extension", "technique": "N/A", "warm_up": "1-2", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Reverse Nordic", "Sissy Squat"], "notes": "Seat back far. Pull butt down into seat." },
+            { "exercise": "Barbell RDL", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "6-8", "rir": [2, 1], "rest": "2-3 min", "substitutions": ["DB RDL", "Seated Cable Deadlift"], "notes": "Glutes back. Neutral spine." },
+            { "exercise": "Machine Hip Thrust", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["BB Hip Thrust", "45 deg Hyper"], "notes": "Squeeze glutes. Control negative." },
+            { "exercise": "Leg Press", "technique": "N/A", "warm_up": "2-4", "sets": 1, "reps": "6-8", "rir": [0], "rest": "2-3 min", "substitutions": ["Smith Squat", "BB Squat"], "notes": "Lower feet for quad focus. No back rounding." },
+            { "exercise": "Standing Calf Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Leg Press Calf Press", "Donkey Calf Raise"], "notes": "1-2s pause at bottom." }
+          ]
+        },
+        {
+          "day_type": "Arms/Delts",
+          "exercises": [
+            { "exercise": "Bayesian Cable Curl", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Incline DB Curl", "Standing DB Curl"], "notes": "Optional lean forward. Deep stretch." },
+            { "exercise": "Overhead Cable Triceps Extension", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Overhead DB Extension", "Skull Crusher"], "notes": "Deep stretch on triceps." },
+            { "exercise": "Modified Zottman Curl", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["DB Hammer Curl", "Preacher Hammer Curl"], "notes": "Hammer up, supinated down." },
+            { "exercise": "Cable Triceps Kickback", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Seated Dip Machine", "Close-Grip Dip"], "notes": "Upper arm behind torso." },
+            { "exercise": "DB Wrist Curl", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Cable Wrist Curl", "N/A"], "notes": "Smooth controlled reps." },
+            { "exercise": "DB Wrist Extension", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Cable Wrist Extension", "N/A"], "notes": "Smooth controlled reps." },
+            { "exercise": "Alternating DB Curl", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["BB Curl", "EZ-Bar Curl"], "notes": "Slow controlled reps." },
+            { "exercise": "Machine Lateral Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["High-Cable Lateral Raise", "DB Lateral Raise"], "notes": "Squeeze side delt." },
+            { "exercise": "Dead Hang (optional)", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "N/A", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["N/A", "N/A"], "notes": "Add seconds each week." }
+          ]
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "days": [
+        {
+          "day_type": "Full Body",
+          "exercises": [
+            { "exercise": "Lying Leg Curl", "technique": "N/A", "warm_up": "1-2", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Seated Leg Curl", "Nordic Ham Curl"], "notes": "Set machine for max stretch. Prevent butt from popping up." },
+            { "exercise": "Squat (Your Choice)", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["BB Back/Front", "Pendulum", "Hack", "Belt", "Smith"], "notes": "Various squat options allowed." },
+            { "exercise": "Barbell Incline Press", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["Smith Incline", "DB Incline"], "notes": "30-45 degree bench. 1s pause at bottom." },
+            { "exercise": "Incline DB Y-Raise", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["Cable Y-Raise", "Machine Lateral Raise"], "notes": "30 degree incline. Lift in Y shape." },
+            { "exercise": "Pull-Up (Wide Grip)", "technique": "N/A", "warm_up": "1-2", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Lat Pulldown", "1-Arm Cable Pulldown"], "notes": "Control negative. Full ROM." },
+            { "exercise": "Standing Calf Raise", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["Leg Press Calf Press", "Donkey Calf Raise"], "notes": "1-2s pause at bottom." }
+          ]
+        },
+        {
+          "day_type": "Upper",
+          "exercises": [
+            { "exercise": "Close-Grip Lat Pulldown", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Close-Grip Pull-Up", "1-Arm Cable Pulldown"], "notes": "Lean back 15 degrees. Drive elbows down." },
+            { "exercise": "Chest-Supported T-Bar Row", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Machine Row", "DB Row"], "notes": "Flare elbows 45 degrees. Squeeze blades." },
+            { "exercise": "Machine Shrug", "technique": "N/A", "warm_up": "1-2", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["Barbell Shrug", "Cable Shrug-In"], "notes": "Shrug to ears. Use straps." },
+            { "exercise": "Machine Chest Press", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["Smith Bench", "DB Bench"], "notes": "1s pause at bottom." },
+            { "exercise": "High-Cable Lateral Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["DB Lateral Raise", "Machine Lateral Raise"], "notes": "Hip height cable. Deep stretch." },
+            { "exercise": "1-Arm Reverse Pec Deck", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["Lying Reverse DB Flye", "Reverse Cable Crossover"], "notes": "Large semi-circle sweep." },
+            { "exercise": "Cable Crunch", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Weighted Crunch", "Machine Crunch"], "notes": "Round lower back. Mind-muscle connection." }
+          ]
+        },
+        {
+          "day_type": "Lower",
+          "exercises": [
+            { "exercise": "Leg Extension", "technique": "N/A", "warm_up": "1-2", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Reverse Nordic", "Sissy Squat"], "notes": "Seat back far. Pull butt down into seat." },
+            { "exercise": "Barbell RDL", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "6-8", "rir": [2, 1], "rest": "2-3 min", "substitutions": ["DB RDL", "Seated Cable Deadlift"], "notes": "Glutes back. Neutral spine." },
+            { "exercise": "Machine Hip Thrust", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["BB Hip Thrust", "45 deg Hyper"], "notes": "Squeeze glutes. Control negative." },
+            { "exercise": "Leg Press", "technique": "N/A", "warm_up": "2-4", "sets": 1, "reps": "6-8", "rir": [0], "rest": "2-3 min", "substitutions": ["Smith Squat", "BB Squat"], "notes": "Lower feet for quad focus. No back rounding." },
+            { "exercise": "Standing Calf Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Leg Press Calf Press", "Donkey Calf Raise"], "notes": "1-2s pause at bottom." }
+          ]
+        },
+        {
+          "day_type": "Arms/Delts",
+          "exercises": [
+            { "exercise": "Bayesian Cable Curl", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Incline DB Curl", "Standing DB Curl"], "notes": "Optional lean forward. Deep stretch." },
+            { "exercise": "Overhead Cable Triceps Extension", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Overhead DB Extension", "Skull Crusher"], "notes": "Deep stretch on triceps." },
+            { "exercise": "Modified Zottman Curl", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["DB Hammer Curl", "Preacher Hammer Curl"], "notes": "Hammer up, supinated down." },
+            { "exercise": "Cable Triceps Kickback", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Seated Dip Machine", "Close-Grip Dip"], "notes": "Upper arm behind torso." },
+            { "exercise": "DB Wrist Curl", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Cable Wrist Curl", "N/A"], "notes": "Smooth controlled reps." },
+            { "exercise": "DB Wrist Extension", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Cable Wrist Extension", "N/A"], "notes": "Smooth controlled reps." },
+            { "exercise": "Alternating DB Curl", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["BB Curl", "EZ-Bar Curl"], "notes": "Slow controlled reps." },
+            { "exercise": "Machine Lateral Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["High-Cable Lateral Raise", "DB Lateral Raise"], "notes": "Squeeze side delt." },
+            { "exercise": "Dead Hang (optional)", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "N/A", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["N/A", "N/A"], "notes": "Add seconds each week." }
+          ]
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "days": [
+        {
+          "day_type": "Full Body",
+          "exercises": [
+            { "exercise": "Lying Leg Curl", "technique": "N/A", "warm_up": "1-2", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Seated Leg Curl", "Nordic Ham Curl"], "notes": "Set machine for max stretch. Prevent butt from popping up." },
+            { "exercise": "Squat (Your Choice)", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["BB Back/Front", "Pendulum", "Hack", "Belt", "Smith"], "notes": "Various squat options allowed." },
+            { "exercise": "Barbell Incline Press", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["Smith Incline", "DB Incline"], "notes": "30-45 degree bench. 1s pause at bottom." },
+            { "exercise": "Incline DB Y-Raise", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["Cable Y-Raise", "Machine Lateral Raise"], "notes": "30 degree incline. Lift in Y shape." },
+            { "exercise": "Pull-Up (Wide Grip)", "technique": "N/A", "warm_up": "1-2", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Lat Pulldown", "1-Arm Cable Pulldown"], "notes": "Control negative. Full ROM." },
+            { "exercise": "Standing Calf Raise", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["Leg Press Calf Press", "Donkey Calf Raise"], "notes": "1-2s pause at bottom." }
+          ]
+        },
+        {
+          "day_type": "Upper",
+          "exercises": [
+            { "exercise": "Close-Grip Lat Pulldown", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Close-Grip Pull-Up", "1-Arm Cable Pulldown"], "notes": "Lean back 15 degrees. Drive elbows down." },
+            { "exercise": "Chest-Supported T-Bar Row", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Machine Row", "DB Row"], "notes": "Flare elbows 45 degrees. Squeeze blades." },
+            { "exercise": "Machine Shrug", "technique": "N/A", "warm_up": "1-2", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["Barbell Shrug", "Cable Shrug-In"], "notes": "Shrug to ears. Use straps." },
+            { "exercise": "Machine Chest Press", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["Smith Bench", "DB Bench"], "notes": "1s pause at bottom." },
+            { "exercise": "High-Cable Lateral Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["DB Lateral Raise", "Machine Lateral Raise"], "notes": "Hip height cable. Deep stretch." },
+            { "exercise": "1-Arm Reverse Pec Deck", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["Lying Reverse DB Flye", "Reverse Cable Crossover"], "notes": "Large semi-circle sweep." },
+            { "exercise": "Cable Crunch", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Weighted Crunch", "Machine Crunch"], "notes": "Round lower back. Mind-muscle connection." }
+          ]
+        },
+        {
+          "day_type": "Lower",
+          "exercises": [
+            { "exercise": "Leg Extension", "technique": "N/A", "warm_up": "1-2", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Reverse Nordic", "Sissy Squat"], "notes": "Seat back far. Pull butt down into seat." },
+            { "exercise": "Barbell RDL", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "6-8", "rir": [2, 1], "rest": "2-3 min", "substitutions": ["DB RDL", "Seated Cable Deadlift"], "notes": "Glutes back. Neutral spine." },
+            { "exercise": "Machine Hip Thrust", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["BB Hip Thrust", "45 deg Hyper"], "notes": "Squeeze glutes. Control negative." },
+            { "exercise": "Leg Press", "technique": "N/A", "warm_up": "2-4", "sets": 1, "reps": "6-8", "rir": [0], "rest": "2-3 min", "substitutions": ["Smith Squat", "BB Squat"], "notes": "Lower feet for quad focus. No back rounding." },
+            { "exercise": "Standing Calf Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Leg Press Calf Press", "Donkey Calf Raise"], "notes": "1-2s pause at bottom." }
+          ]
+        },
+        {
+          "day_type": "Arms/Delts",
+          "exercises": [
+            { "exercise": "Bayesian Cable Curl", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Incline DB Curl", "Standing DB Curl"], "notes": "Optional lean forward. Deep stretch." },
+            { "exercise": "Overhead Cable Triceps Extension", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Overhead DB Extension", "Skull Crusher"], "notes": "Deep stretch on triceps." },
+            { "exercise": "Modified Zottman Curl", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["DB Hammer Curl", "Preacher Hammer Curl"], "notes": "Hammer up, supinated down." },
+            { "exercise": "Cable Triceps Kickback", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Seated Dip Machine", "Close-Grip Dip"], "notes": "Upper arm behind torso." },
+            { "exercise": "DB Wrist Curl", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Cable Wrist Curl", "N/A"], "notes": "Smooth controlled reps." },
+            { "exercise": "DB Wrist Extension", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Cable Wrist Extension", "N/A"], "notes": "Smooth controlled reps." },
+            { "exercise": "Alternating DB Curl", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["BB Curl", "EZ-Bar Curl"], "notes": "Slow controlled reps." },
+            { "exercise": "Machine Lateral Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["High-Cable Lateral Raise", "DB Lateral Raise"], "notes": "Squeeze side delt." },
+            { "exercise": "Dead Hang (optional)", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "N/A", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["N/A", "N/A"], "notes": "Add seconds each week." }
+          ]
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "days": [
+        {
+          "day_type": "Full Body",
+          "exercises": [
+            { "exercise": "Lying Leg Curl", "technique": "N/A", "warm_up": "1-2", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Seated Leg Curl", "Nordic Ham Curl"], "notes": "Set machine for max stretch. Prevent butt from popping up." },
+            { "exercise": "Squat (Your Choice)", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["BB Back/Front", "Pendulum", "Hack", "Belt", "Smith"], "notes": "Various squat options allowed." },
+            { "exercise": "Barbell Incline Press", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["Smith Incline", "DB Incline"], "notes": "30-45 degree bench. 1s pause at bottom." },
+            { "exercise": "Incline DB Y-Raise", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["Cable Y-Raise", "Machine Lateral Raise"], "notes": "30 degree incline. Lift in Y shape." },
+            { "exercise": "Pull-Up (Wide Grip)", "technique": "N/A", "warm_up": "1-2", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Lat Pulldown", "1-Arm Cable Pulldown"], "notes": "Control negative. Full ROM." },
+            { "exercise": "Standing Calf Raise", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["Leg Press Calf Press", "Donkey Calf Raise"], "notes": "1-2s pause at bottom." }
+          ]
+        },
+        {
+          "day_type": "Upper",
+          "exercises": [
+            { "exercise": "Close-Grip Lat Pulldown", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Close-Grip Pull-Up", "1-Arm Cable Pulldown"], "notes": "Lean back 15 degrees. Drive elbows down." },
+            { "exercise": "Chest-Supported T-Bar Row", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Machine Row", "DB Row"], "notes": "Flare elbows 45 degrees. Squeeze blades." },
+            { "exercise": "Machine Shrug", "technique": "N/A", "warm_up": "1-2", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["Barbell Shrug", "Cable Shrug-In"], "notes": "Shrug to ears. Use straps." },
+            { "exercise": "Machine Chest Press", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["Smith Bench", "DB Bench"], "notes": "1s pause at bottom." },
+            { "exercise": "High-Cable Lateral Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["DB Lateral Raise", "Machine Lateral Raise"], "notes": "Hip height cable. Deep stretch." },
+            { "exercise": "1-Arm Reverse Pec Deck", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["Lying Reverse DB Flye", "Reverse Cable Crossover"], "notes": "Large semi-circle sweep." },
+            { "exercise": "Cable Crunch", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Weighted Crunch", "Machine Crunch"], "notes": "Round lower back. Mind-muscle connection." }
+          ]
+        },
+        {
+          "day_type": "Lower",
+          "exercises": [
+            { "exercise": "Leg Extension", "technique": "N/A", "warm_up": "1-2", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Reverse Nordic", "Sissy Squat"], "notes": "Seat back far. Pull butt down into seat." },
+            { "exercise": "Barbell RDL", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "6-8", "rir": [2, 1], "rest": "2-3 min", "substitutions": ["DB RDL", "Seated Cable Deadlift"], "notes": "Glutes back. Neutral spine." },
+            { "exercise": "Machine Hip Thrust", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["BB Hip Thrust", "45 deg Hyper"], "notes": "Squeeze glutes. Control negative." },
+            { "exercise": "Leg Press", "technique": "N/A", "warm_up": "2-4", "sets": 1, "reps": "6-8", "rir": [0], "rest": "2-3 min", "substitutions": ["Smith Squat", "BB Squat"], "notes": "Lower feet for quad focus. No back rounding." },
+            { "exercise": "Standing Calf Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Leg Press Calf Press", "Donkey Calf Raise"], "notes": "1-2s pause at bottom." }
+          ]
+        },
+        {
+          "day_type": "Arms/Delts",
+          "exercises": [
+            { "exercise": "Bayesian Cable Curl", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Incline DB Curl", "Standing DB Curl"], "notes": "Optional lean forward. Deep stretch." },
+            { "exercise": "Overhead Cable Triceps Extension", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Overhead DB Extension", "Skull Crusher"], "notes": "Deep stretch on triceps." },
+            { "exercise": "Modified Zottman Curl", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["DB Hammer Curl", "Preacher Hammer Curl"], "notes": "Hammer up, supinated down." },
+            { "exercise": "Cable Triceps Kickback", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Seated Dip Machine", "Close-Grip Dip"], "notes": "Upper arm behind torso." },
+            { "exercise": "DB Wrist Curl", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Cable Wrist Curl", "N/A"], "notes": "Smooth controlled reps." },
+            { "exercise": "DB Wrist Extension", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Cable Wrist Extension", "N/A"], "notes": "Smooth controlled reps." },
+            { "exercise": "Alternating DB Curl", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["BB Curl", "EZ-Bar Curl"], "notes": "Slow controlled reps." },
+            { "exercise": "Machine Lateral Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["High-Cable Lateral Raise", "DB Lateral Raise"], "notes": "Squeeze side delt." },
+            { "exercise": "Dead Hang (optional)", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "N/A", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["N/A", "N/A"], "notes": "Add seconds each week." }
+          ]
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "label": "Deload Week",
+      "days": [
+        {
+          "day_type": "Full Body",
+          "exercises": [
+            { "exercise": "Lying Leg Curl", "technique": "N/A", "warm_up": "1-2", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "1-2 min", "substitutions": ["Seated Leg Curl", "Nordic Ham Curl"], "notes": "Set machine for max stretch. Prevent butt from popping up." },
+            { "exercise": "Squat (Your Choice)", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [3, 2], "rest": "3-5 min", "substitutions": ["BB Back/Front", "Pendulum", "Hack", "Belt", "Smith"], "notes": "Various squat options allowed." },
+            { "exercise": "Barbell Incline Press", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [2, 1], "rest": "3-5 min", "substitutions": ["Smith Incline", "DB Incline"], "notes": "30-45 degree bench. 1s pause at bottom." },
+            { "exercise": "Incline DB Y-Raise", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["Cable Y-Raise", "Machine Lateral Raise"], "notes": "30 degree incline. Lift in Y shape." },
+            { "exercise": "Pull-Up (Wide Grip)", "technique": "N/A", "warm_up": "1-2", "sets": 2, "reps": "6-8", "rir": [2, 1], "rest": "2-3 min", "substitutions": ["Lat Pulldown", "1-Arm Cable Pulldown"], "notes": "Control negative. Full ROM." },
+            { "exercise": "Standing Calf Raise", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["Leg Press Calf Press", "Donkey Calf Raise"], "notes": "1-2s pause at bottom." }
+          ]
+        },
+        {
+          "day_type": "Upper",
+          "exercises": [
+            { "exercise": "Close-Grip Lat Pulldown", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "8-10", "rir": [2, 1], "rest": "2-3 min", "substitutions": ["Close-Grip Pull-Up", "1-Arm Cable Pulldown"], "notes": "Lean back 15 degrees. Drive elbows down." },
+            { "exercise": "Chest-Supported T-Bar Row", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "8-10", "rir": [2, 1], "rest": "2-3 min", "substitutions": ["Machine Row", "DB Row"], "notes": "Flare elbows 45 degrees. Squeeze blades." },
+            { "exercise": "Machine Shrug", "technique": "N/A", "warm_up": "1-2", "sets": 1, "reps": "6-8", "rir": [1], "rest": "1-2 min", "substitutions": ["Barbell Shrug", "Cable Shrug-In"], "notes": "Shrug to ears. Use straps." },
+            { "exercise": "Machine Chest Press", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "8-10", "rir": [2, 1], "rest": "3-5 min", "substitutions": ["Smith Bench", "DB Bench"], "notes": "1s pause at bottom." },
+            { "exercise": "High-Cable Lateral Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "1-2 min", "substitutions": ["DB Lateral Raise", "Machine Lateral Raise"], "notes": "Hip height cable. Deep stretch." },
+            { "exercise": "1-Arm Reverse Pec Deck", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["Lying Reverse DB Flye", "Reverse Cable Crossover"], "notes": "Large semi-circle sweep." },
+            { "exercise": "Cable Crunch", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "1-2 min", "substitutions": ["Weighted Crunch", "Machine Crunch"], "notes": "Round lower back. Mind-muscle connection." }
+          ]
+        },
+        {
+          "day_type": "Lower",
+          "exercises": [
+            { "exercise": "Leg Extension", "technique": "N/A", "warm_up": "1-2", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "1-2 min", "substitutions": ["Reverse Nordic", "Sissy Squat"], "notes": "Seat back far. Pull butt down into seat." },
+            { "exercise": "Barbell RDL", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "6-8", "rir": [3, 2], "rest": "2-3 min", "substitutions": ["DB RDL", "Seated Cable Deadlift"], "notes": "Glutes back. Neutral spine." },
+            { "exercise": "Machine Hip Thrust", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [2, 1], "rest": "2-3 min", "substitutions": ["BB Hip Thrust", "45 deg Hyper"], "notes": "Squeeze glutes. Control negative." },
+            { "exercise": "Leg Press", "technique": "N/A", "warm_up": "2-4", "sets": 1, "reps": "6-8", "rir": [1], "rest": "2-3 min", "substitutions": ["Smith Squat", "BB Squat"], "notes": "Lower feet for quad focus. No back rounding." },
+            { "exercise": "Standing Calf Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "1-2 min", "substitutions": ["Leg Press Calf Press", "Donkey Calf Raise"], "notes": "1-2s pause at bottom." }
+          ]
+        },
+        {
+          "day_type": "Arms/Delts",
+          "exercises": [
+            { "exercise": "Bayesian Cable Curl", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "1-2 min", "substitutions": ["Incline DB Curl", "Standing DB Curl"], "notes": "Optional lean forward. Deep stretch." },
+            { "exercise": "Overhead Cable Triceps Extension", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "1-2 min", "substitutions": ["Overhead DB Extension", "Skull Crusher"], "notes": "Deep stretch on triceps." },
+            { "exercise": "Modified Zottman Curl", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["DB Hammer Curl", "Preacher Hammer Curl"], "notes": "Hammer up, supinated down." },
+            { "exercise": "Cable Triceps Kickback", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "1-2 min", "substitutions": ["Seated Dip Machine", "Close-Grip Dip"], "notes": "Upper arm behind torso." },
+            { "exercise": "DB Wrist Curl", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "1-2 min", "substitutions": ["Cable Wrist Curl", "N/A"], "notes": "Smooth controlled reps." },
+            { "exercise": "DB Wrist Extension", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "1-2 min", "substitutions": ["Cable Wrist Extension", "N/A"], "notes": "Smooth controlled reps." },
+            { "exercise": "Alternating DB Curl", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["BB Curl", "EZ-Bar Curl"], "notes": "Slow controlled reps." },
+            { "exercise": "Machine Lateral Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "1-2 min", "substitutions": ["High-Cable Lateral Raise", "DB Lateral Raise"], "notes": "Squeeze side delt." },
+            { "exercise": "Dead Hang (optional)", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "N/A", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["N/A", "N/A"], "notes": "Add seconds each week." }
+          ]
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "label": "Block 2 Start (Intensity Block)",
+      "days": [
+        {
+          "day_type": "Full Body",
+          "exercises": [
+            { "exercise": "Lying Leg Curl", "technique": "Lengthened Partials (Extend Set)", "warm_up": "1-2", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Seated Leg Curl", "Nordic Ham Curl"], "notes": "Set machine for max stretch. Prevent butt from popping up." },
+            { "exercise": "Squat (Your Choice)", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["BB Back/Front", "Pendulum", "Hack", "Belt", "Smith"], "notes": "Various squat options allowed." },
+            { "exercise": "Barbell Incline Press", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["Smith Incline", "DB Incline"], "notes": "30-45 degree bench. 1s pause at bottom." },
+            { "exercise": "Incline DB Y-Raise", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["Cable Y-Raise", "Machine Lateral Raise"], "notes": "30 degree incline. Lift in Y shape." },
+            { "exercise": "Pull-Up (Wide Grip)", "technique": "Lengthened Partials (Extend Set)", "warm_up": "1-2", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Lat Pulldown", "1-Arm Cable Pulldown"], "notes": "Control negative. Full ROM." },
+            { "exercise": "Standing Calf Raise", "technique": "Lengthened Partials (Extend Set)", "warm_up": "0-1", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["Leg Press Calf Press", "Donkey Calf Raise"], "notes": "1-2s pause at bottom." }
+          ]
+        },
+        {
+          "day_type": "Upper",
+          "exercises": [
+            { "exercise": "Close-Grip Lat Pulldown", "technique": "Lengthened Partials (Extend Set)", "warm_up": "2-3", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Close-Grip Pull-Up", "1-Arm Cable Pulldown"], "notes": "Lean back 15 degrees. Drive elbows down." },
+            { "exercise": "Chest-Supported T-Bar Row", "technique": "Two Drop Sets (~25% per)", "warm_up": "2-3", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Machine Row", "DB Row"], "notes": "Flare elbows 45 degrees. Squeeze blades." },
+            { "exercise": "Machine Shrug", "technique": "N/A", "warm_up": "1-2", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["Barbell Shrug", "Cable Shrug-In"], "notes": "Shrug to ears. Use straps." },
+            { "exercise": "Machine Chest Press", "technique": "Weighted Static Hold (30 sec)", "warm_up": "2-4", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["Smith Bench", "DB Bench"], "notes": "1s pause at bottom." },
+            { "exercise": "High-Cable Lateral Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["DB Lateral Raise", "Machine Lateral Raise"], "notes": "Hip height cable. Deep stretch." },
+            { "exercise": "1-Arm Reverse Pec Deck", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["Lying Reverse DB Flye", "Reverse Cable Crossover"], "notes": "Large semi-circle sweep." },
+            { "exercise": "Cable Crunch", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Weighted Crunch", "Machine Crunch"], "notes": "Round lower back. Mind-muscle connection." }
+          ]
+        },
+        {
+          "day_type": "Lower",
+          "exercises": [
+            { "exercise": "Leg Extension", "technique": "Lengthened Partials (Extend Set)", "warm_up": "1-2", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Reverse Nordic", "Sissy Squat"], "notes": "Seat back far. Pull butt down into seat." },
+            { "exercise": "Barbell RDL", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "6-8", "rir": [2, 1], "rest": "2-3 min", "substitutions": ["DB RDL", "Seated Cable Deadlift"], "notes": "Glutes back. Neutral spine." },
+            { "exercise": "Machine Hip Thrust", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["BB Hip Thrust", "45 deg Hyper"], "notes": "Squeeze glutes. Control negative." },
+            { "exercise": "Leg Press", "technique": "N/A", "warm_up": "2-4", "sets": 1, "reps": "6-8", "rir": [0], "rest": "2-3 min", "substitutions": ["Smith Squat", "BB Squat"], "notes": "Lower feet for quad focus. No back rounding." },
+            { "exercise": "Standing Calf Raise", "technique": "Lengthened Partials (Extend Set)", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Leg Press Calf Press", "Donkey Calf Raise"], "notes": "1-2s pause at bottom." }
+          ]
+        },
+        {
+          "day_type": "Arms/Delts",
+          "exercises": [
+            { "exercise": "Bayesian Cable Curl", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Incline DB Curl", "Standing DB Curl"], "notes": "Optional lean forward. Deep stretch." },
+            { "exercise": "Overhead Cable Triceps Extension", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Overhead DB Extension", "Skull Crusher"], "notes": "Deep stretch on triceps." },
+            { "exercise": "Modified Zottman Curl", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["DB Hammer Curl", "Preacher Hammer Curl"], "notes": "Hammer up, supinated down." },
+            { "exercise": "Cable Triceps Kickback", "technique": "Two Drop Sets (~25% per)", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Seated Dip Machine", "Close-Grip Dip"], "notes": "Upper arm behind torso." },
+            { "exercise": "DB Wrist Curl", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Cable Wrist Curl", "N/A"], "notes": "Smooth controlled reps." },
+            { "exercise": "DB Wrist Extension", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Cable Wrist Extension", "N/A"], "notes": "Smooth controlled reps." },
+            { "exercise": "Alternating DB Curl", "technique": "Two Drop Sets (~25% per)", "warm_up": "0-1", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["BB Curl", "EZ-Bar Curl"], "notes": "Slow controlled reps." },
+            { "exercise": "Machine Lateral Raise", "technique": "Myo-reps", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["High-Cable Lateral Raise", "DB Lateral Raise"], "notes": "Squeeze side delt." },
+            { "exercise": "Dead Hang (optional)", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "N/A", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["N/A", "N/A"], "notes": "Add seconds each week." }
+          ]
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "days": [
+        {
+          "day_type": "Full Body",
+          "exercises": [
+            { "exercise": "Lying Leg Curl", "technique": "Lengthened Partials (Extend Set)", "warm_up": "1-2", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Seated Leg Curl", "Nordic Ham Curl"], "notes": "Set machine for max stretch. Prevent butt from popping up." },
+            { "exercise": "Squat (Your Choice)", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["BB Back/Front", "Pendulum", "Hack", "Belt", "Smith"], "notes": "Various squat options allowed." },
+            { "exercise": "Barbell Incline Press", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["Smith Incline", "DB Incline"], "notes": "30-45 degree bench. 1s pause at bottom." },
+            { "exercise": "Incline DB Y-Raise", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["Cable Y-Raise", "Machine Lateral Raise"], "notes": "30 degree incline. Lift in Y shape." },
+            { "exercise": "Pull-Up (Wide Grip)", "technique": "Lengthened Partials (Extend Set)", "warm_up": "1-2", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Lat Pulldown", "1-Arm Cable Pulldown"], "notes": "Control negative. Full ROM." },
+            { "exercise": "Standing Calf Raise", "technique": "Lengthened Partials (Extend Set)", "warm_up": "0-1", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["Leg Press Calf Press", "Donkey Calf Raise"], "notes": "1-2s pause at bottom." }
+          ]
+        },
+        {
+          "day_type": "Upper",
+          "exercises": [
+            { "exercise": "Close-Grip Lat Pulldown", "technique": "Lengthened Partials (Extend Set)", "warm_up": "2-3", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Close-Grip Pull-Up", "1-Arm Cable Pulldown"], "notes": "Lean back 15 degrees. Drive elbows down." },
+            { "exercise": "Chest-Supported T-Bar Row", "technique": "Two Drop Sets (~25% per)", "warm_up": "2-3", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Machine Row", "DB Row"], "notes": "Flare elbows 45 degrees. Squeeze blades." },
+            { "exercise": "Machine Shrug", "technique": "N/A", "warm_up": "1-2", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["Barbell Shrug", "Cable Shrug-In"], "notes": "Shrug to ears. Use straps." },
+            { "exercise": "Machine Chest Press", "technique": "Weighted Static Hold (30 sec)", "warm_up": "2-4", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["Smith Bench", "DB Bench"], "notes": "1s pause at bottom." },
+            { "exercise": "High-Cable Lateral Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["DB Lateral Raise", "Machine Lateral Raise"], "notes": "Hip height cable. Deep stretch." },
+            { "exercise": "1-Arm Reverse Pec Deck", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["Lying Reverse DB Flye", "Reverse Cable Crossover"], "notes": "Large semi-circle sweep." },
+            { "exercise": "Cable Crunch", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Weighted Crunch", "Machine Crunch"], "notes": "Round lower back. Mind-muscle connection." }
+          ]
+        },
+        {
+          "day_type": "Lower",
+          "exercises": [
+            { "exercise": "Leg Extension", "technique": "Lengthened Partials (Extend Set)", "warm_up": "1-2", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Reverse Nordic", "Sissy Squat"], "notes": "Seat back far. Pull butt down into seat." },
+            { "exercise": "Barbell RDL", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "6-8", "rir": [2, 1], "rest": "2-3 min", "substitutions": ["DB RDL", "Seated Cable Deadlift"], "notes": "Glutes back. Neutral spine." },
+            { "exercise": "Machine Hip Thrust", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["BB Hip Thrust", "45 deg Hyper"], "notes": "Squeeze glutes. Control negative." },
+            { "exercise": "Leg Press", "technique": "N/A", "warm_up": "2-4", "sets": 1, "reps": "6-8", "rir": [0], "rest": "2-3 min", "substitutions": ["Smith Squat", "BB Squat"], "notes": "Lower feet for quad focus. No back rounding." },
+            { "exercise": "Standing Calf Raise", "technique": "Lengthened Partials (Extend Set)", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Leg Press Calf Press", "Donkey Calf Raise"], "notes": "1-2s pause at bottom." }
+          ]
+        },
+        {
+          "day_type": "Arms/Delts",
+          "exercises": [
+            { "exercise": "Bayesian Cable Curl", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Incline DB Curl", "Standing DB Curl"], "notes": "Optional lean forward. Deep stretch." },
+            { "exercise": "Overhead Cable Triceps Extension", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Overhead DB Extension", "Skull Crusher"], "notes": "Deep stretch on triceps." },
+            { "exercise": "Modified Zottman Curl", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["DB Hammer Curl", "Preacher Hammer Curl"], "notes": "Hammer up, supinated down." },
+            { "exercise": "Cable Triceps Kickback", "technique": "Two Drop Sets (~25% per)", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Seated Dip Machine", "Close-Grip Dip"], "notes": "Upper arm behind torso." },
+            { "exercise": "DB Wrist Curl", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Cable Wrist Curl", "N/A"], "notes": "Smooth controlled reps." },
+            { "exercise": "DB Wrist Extension", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Cable Wrist Extension", "N/A"], "notes": "Smooth controlled reps." },
+            { "exercise": "Alternating DB Curl", "technique": "Two Drop Sets (~25% per)", "warm_up": "0-1", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["BB Curl", "EZ-Bar Curl"], "notes": "Slow controlled reps." },
+            { "exercise": "Machine Lateral Raise", "technique": "Myo-reps", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["High-Cable Lateral Raise", "DB Lateral Raise"], "notes": "Squeeze side delt." },
+            { "exercise": "Dead Hang (optional)", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "N/A", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["N/A", "N/A"], "notes": "Add seconds each week." }
+          ]
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "days": [
+        {
+          "day_type": "Full Body",
+          "exercises": [
+            { "exercise": "Lying Leg Curl", "technique": "Lengthened Partials (Extend Set)", "warm_up": "1-2", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Seated Leg Curl", "Nordic Ham Curl"], "notes": "Set machine for max stretch. Prevent butt from popping up." },
+            { "exercise": "Squat (Your Choice)", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["BB Back/Front", "Pendulum", "Hack", "Belt", "Smith"], "notes": "Various squat options allowed." },
+            { "exercise": "Barbell Incline Press", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["Smith Incline", "DB Incline"], "notes": "30-45 degree bench. 1s pause at bottom." },
+            { "exercise": "Incline DB Y-Raise", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["Cable Y-Raise", "Machine Lateral Raise"], "notes": "30 degree incline. Lift in Y shape." },
+            { "exercise": "Pull-Up (Wide Grip)", "technique": "Lengthened Partials (Extend Set)", "warm_up": "1-2", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Lat Pulldown", "1-Arm Cable Pulldown"], "notes": "Control negative. Full ROM." },
+            { "exercise": "Standing Calf Raise", "technique": "Lengthened Partials (Extend Set)", "warm_up": "0-1", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["Leg Press Calf Press", "Donkey Calf Raise"], "notes": "1-2s pause at bottom." }
+          ]
+        },
+        {
+          "day_type": "Upper",
+          "exercises": [
+            { "exercise": "Close-Grip Lat Pulldown", "technique": "Lengthened Partials (Extend Set)", "warm_up": "2-3", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Close-Grip Pull-Up", "1-Arm Cable Pulldown"], "notes": "Lean back 15 degrees. Drive elbows down." },
+            { "exercise": "Chest-Supported T-Bar Row", "technique": "Two Drop Sets (~25% per)", "warm_up": "2-3", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Machine Row", "DB Row"], "notes": "Flare elbows 45 degrees. Squeeze blades." },
+            { "exercise": "Machine Shrug", "technique": "N/A", "warm_up": "1-2", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["Barbell Shrug", "Cable Shrug-In"], "notes": "Shrug to ears. Use straps." },
+            { "exercise": "Machine Chest Press", "technique": "Weighted Static Hold (30 sec)", "warm_up": "2-4", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["Smith Bench", "DB Bench"], "notes": "1s pause at bottom." },
+            { "exercise": "High-Cable Lateral Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["DB Lateral Raise", "Machine Lateral Raise"], "notes": "Hip height cable. Deep stretch." },
+            { "exercise": "1-Arm Reverse Pec Deck", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["Lying Reverse DB Flye", "Reverse Cable Crossover"], "notes": "Large semi-circle sweep." },
+            { "exercise": "Cable Crunch", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Weighted Crunch", "Machine Crunch"], "notes": "Round lower back. Mind-muscle connection." }
+          ]
+        },
+        {
+          "day_type": "Lower",
+          "exercises": [
+            { "exercise": "Leg Extension", "technique": "Lengthened Partials (Extend Set)", "warm_up": "1-2", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Reverse Nordic", "Sissy Squat"], "notes": "Seat back far. Pull butt down into seat." },
+            { "exercise": "Barbell RDL", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "6-8", "rir": [2, 1], "rest": "2-3 min", "substitutions": ["DB RDL", "Seated Cable Deadlift"], "notes": "Glutes back. Neutral spine." },
+            { "exercise": "Machine Hip Thrust", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["BB Hip Thrust", "45 deg Hyper"], "notes": "Squeeze glutes. Control negative." },
+            { "exercise": "Leg Press", "technique": "N/A", "warm_up": "2-4", "sets": 1, "reps": "6-8", "rir": [0], "rest": "2-3 min", "substitutions": ["Smith Squat", "BB Squat"], "notes": "Lower feet for quad focus. No back rounding." },
+            { "exercise": "Standing Calf Raise", "technique": "Lengthened Partials (Extend Set)", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Leg Press Calf Press", "Donkey Calf Raise"], "notes": "1-2s pause at bottom." }
+          ]
+        },
+        {
+          "day_type": "Arms/Delts",
+          "exercises": [
+            { "exercise": "Bayesian Cable Curl", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Incline DB Curl", "Standing DB Curl"], "notes": "Optional lean forward. Deep stretch." },
+            { "exercise": "Overhead Cable Triceps Extension", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Overhead DB Extension", "Skull Crusher"], "notes": "Deep stretch on triceps." },
+            { "exercise": "Modified Zottman Curl", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["DB Hammer Curl", "Preacher Hammer Curl"], "notes": "Hammer up, supinated down." },
+            { "exercise": "Cable Triceps Kickback", "technique": "Two Drop Sets (~25% per)", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Seated Dip Machine", "Close-Grip Dip"], "notes": "Upper arm behind torso." },
+            { "exercise": "DB Wrist Curl", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Cable Wrist Curl", "N/A"], "notes": "Smooth controlled reps." },
+            { "exercise": "DB Wrist Extension", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Cable Wrist Extension", "N/A"], "notes": "Smooth controlled reps." },
+            { "exercise": "Alternating DB Curl", "technique": "Two Drop Sets (~25% per)", "warm_up": "0-1", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["BB Curl", "EZ-Bar Curl"], "notes": "Slow controlled reps." },
+            { "exercise": "Machine Lateral Raise", "technique": "Myo-reps", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["High-Cable Lateral Raise", "DB Lateral Raise"], "notes": "Squeeze side delt." },
+            { "exercise": "Dead Hang (optional)", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "N/A", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["N/A", "N/A"], "notes": "Add seconds each week." }
+          ]
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "days": [
+        {
+          "day_type": "Full Body",
+          "exercises": [
+            { "exercise": "Lying Leg Curl", "technique": "Lengthened Partials (Extend Set)", "warm_up": "1-2", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Seated Leg Curl", "Nordic Ham Curl"], "notes": "Set machine for max stretch. Prevent butt from popping up." },
+            { "exercise": "Squat (Your Choice)", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["BB Back/Front", "Pendulum", "Hack", "Belt", "Smith"], "notes": "Various squat options allowed." },
+            { "exercise": "Barbell Incline Press", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["Smith Incline", "DB Incline"], "notes": "30-45 degree bench. 1s pause at bottom." },
+            { "exercise": "Incline DB Y-Raise", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["Cable Y-Raise", "Machine Lateral Raise"], "notes": "30 degree incline. Lift in Y shape." },
+            { "exercise": "Pull-Up (Wide Grip)", "technique": "Lengthened Partials (Extend Set)", "warm_up": "1-2", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Lat Pulldown", "1-Arm Cable Pulldown"], "notes": "Control negative. Full ROM." },
+            { "exercise": "Standing Calf Raise", "technique": "Lengthened Partials (Extend Set)", "warm_up": "0-1", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["Leg Press Calf Press", "Donkey Calf Raise"], "notes": "1-2s pause at bottom." }
+          ]
+        },
+        {
+          "day_type": "Upper",
+          "exercises": [
+            { "exercise": "Close-Grip Lat Pulldown", "technique": "Lengthened Partials (Extend Set)", "warm_up": "2-3", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Close-Grip Pull-Up", "1-Arm Cable Pulldown"], "notes": "Lean back 15 degrees. Drive elbows down." },
+            { "exercise": "Chest-Supported T-Bar Row", "technique": "Two Drop Sets (~25% per)", "warm_up": "2-3", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Machine Row", "DB Row"], "notes": "Flare elbows 45 degrees. Squeeze blades." },
+            { "exercise": "Machine Shrug", "technique": "N/A", "warm_up": "1-2", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["Barbell Shrug", "Cable Shrug-In"], "notes": "Shrug to ears. Use straps." },
+            { "exercise": "Machine Chest Press", "technique": "Weighted Static Hold (30 sec)", "warm_up": "2-4", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["Smith Bench", "DB Bench"], "notes": "1s pause at bottom." },
+            { "exercise": "High-Cable Lateral Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["DB Lateral Raise", "Machine Lateral Raise"], "notes": "Hip height cable. Deep stretch." },
+            { "exercise": "1-Arm Reverse Pec Deck", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["Lying Reverse DB Flye", "Reverse Cable Crossover"], "notes": "Large semi-circle sweep." },
+            { "exercise": "Cable Crunch", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Weighted Crunch", "Machine Crunch"], "notes": "Round lower back. Mind-muscle connection." }
+          ]
+        },
+        {
+          "day_type": "Lower",
+          "exercises": [
+            { "exercise": "Leg Extension", "technique": "Lengthened Partials (Extend Set)", "warm_up": "1-2", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Reverse Nordic", "Sissy Squat"], "notes": "Seat back far. Pull butt down into seat." },
+            { "exercise": "Barbell RDL", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "6-8", "rir": [2, 1], "rest": "2-3 min", "substitutions": ["DB RDL", "Seated Cable Deadlift"], "notes": "Glutes back. Neutral spine." },
+            { "exercise": "Machine Hip Thrust", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["BB Hip Thrust", "45 deg Hyper"], "notes": "Squeeze glutes. Control negative." },
+            { "exercise": "Leg Press", "technique": "N/A", "warm_up": "2-4", "sets": 1, "reps": "6-8", "rir": [0], "rest": "2-3 min", "substitutions": ["Smith Squat", "BB Squat"], "notes": "Lower feet for quad focus. No back rounding." },
+            { "exercise": "Standing Calf Raise", "technique": "Lengthened Partials (Extend Set)", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Leg Press Calf Press", "Donkey Calf Raise"], "notes": "1-2s pause at bottom." }
+          ]
+        },
+        {
+          "day_type": "Arms/Delts",
+          "exercises": [
+            { "exercise": "Bayesian Cable Curl", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Incline DB Curl", "Standing DB Curl"], "notes": "Optional lean forward. Deep stretch." },
+            { "exercise": "Overhead Cable Triceps Extension", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Overhead DB Extension", "Skull Crusher"], "notes": "Deep stretch on triceps." },
+            { "exercise": "Modified Zottman Curl", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["DB Hammer Curl", "Preacher Hammer Curl"], "notes": "Hammer up, supinated down." },
+            { "exercise": "Cable Triceps Kickback", "technique": "Two Drop Sets (~25% per)", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Seated Dip Machine", "Close-Grip Dip"], "notes": "Upper arm behind torso." },
+            { "exercise": "DB Wrist Curl", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Cable Wrist Curl", "N/A"], "notes": "Smooth controlled reps." },
+            { "exercise": "DB Wrist Extension", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Cable Wrist Extension", "N/A"], "notes": "Smooth controlled reps." },
+            { "exercise": "Alternating DB Curl", "technique": "Two Drop Sets (~25% per)", "warm_up": "0-1", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["BB Curl", "EZ-Bar Curl"], "notes": "Slow controlled reps." },
+            { "exercise": "Machine Lateral Raise", "technique": "Myo-reps", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["High-Cable Lateral Raise", "DB Lateral Raise"], "notes": "Squeeze side delt." },
+            { "exercise": "Dead Hang (optional)", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "N/A", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["N/A", "N/A"], "notes": "Add seconds each week." }
+          ]
+        }
+      ]
+    },
+    {
+      "week": 12,
+      "days": [
+        {
+          "day_type": "Full Body",
+          "exercises": [
+            { "exercise": "Lying Leg Curl", "technique": "Lengthened Partials (Extend Set)", "warm_up": "1-2", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Seated Leg Curl", "Nordic Ham Curl"], "notes": "Set machine for max stretch. Prevent butt from popping up." },
+            { "exercise": "Squat (Your Choice)", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["BB Back/Front", "Pendulum", "Hack", "Belt", "Smith"], "notes": "Various squat options allowed." },
+            { "exercise": "Barbell Incline Press", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["Smith Incline", "DB Incline"], "notes": "30-45 degree bench. 1s pause at bottom." },
+            { "exercise": "Incline DB Y-Raise", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["Cable Y-Raise", "Machine Lateral Raise"], "notes": "30 degree incline. Lift in Y shape." },
+            { "exercise": "Pull-Up (Wide Grip)", "technique": "Lengthened Partials (Extend Set)", "warm_up": "1-2", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Lat Pulldown", "1-Arm Cable Pulldown"], "notes": "Control negative. Full ROM." },
+            { "exercise": "Standing Calf Raise", "technique": "Lengthened Partials (Extend Set)", "warm_up": "0-1", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["Leg Press Calf Press", "Donkey Calf Raise"], "notes": "1-2s pause at bottom." }
+          ]
+        },
+        {
+          "day_type": "Upper",
+          "exercises": [
+            { "exercise": "Close-Grip Lat Pulldown", "technique": "Lengthened Partials (Extend Set)", "warm_up": "2-3", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Close-Grip Pull-Up", "1-Arm Cable Pulldown"], "notes": "Lean back 15 degrees. Drive elbows down." },
+            { "exercise": "Chest-Supported T-Bar Row", "technique": "Two Drop Sets (~25% per)", "warm_up": "2-3", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["Machine Row", "DB Row"], "notes": "Flare elbows 45 degrees. Squeeze blades." },
+            { "exercise": "Machine Shrug", "technique": "N/A", "warm_up": "1-2", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["Barbell Shrug", "Cable Shrug-In"], "notes": "Shrug to ears. Use straps." },
+            { "exercise": "Machine Chest Press", "technique": "Weighted Static Hold (30 sec)", "warm_up": "2-4", "sets": 2, "reps": "8-10", "rir": [1, 0], "rest": "3-5 min", "substitutions": ["Smith Bench", "DB Bench"], "notes": "1s pause at bottom." },
+            { "exercise": "High-Cable Lateral Raise", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["DB Lateral Raise", "Machine Lateral Raise"], "notes": "Hip height cable. Deep stretch." },
+            { "exercise": "1-Arm Reverse Pec Deck", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["Lying Reverse DB Flye", "Reverse Cable Crossover"], "notes": "Large semi-circle sweep." },
+            { "exercise": "Cable Crunch", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Weighted Crunch", "Machine Crunch"], "notes": "Round lower back. Mind-muscle connection." }
+          ]
+        },
+        {
+          "day_type": "Lower",
+          "exercises": [
+            { "exercise": "Leg Extension", "technique": "Lengthened Partials (Extend Set)", "warm_up": "1-2", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Reverse Nordic", "Sissy Squat"], "notes": "Seat back far. Pull butt down into seat." },
+            { "exercise": "Barbell RDL", "technique": "N/A", "warm_up": "2-3", "sets": 2, "reps": "6-8", "rir": [2, 1], "rest": "2-3 min", "substitutions": ["DB RDL", "Seated Cable Deadlift"], "notes": "Glutes back. Neutral spine." },
+            { "exercise": "Machine Hip Thrust", "technique": "N/A", "warm_up": "2-4", "sets": 2, "reps": "6-8", "rir": [1, 0], "rest": "2-3 min", "substitutions": ["BB Hip Thrust", "45 deg Hyper"], "notes": "Squeeze glutes. Control negative." },
+            { "exercise": "Leg Press", "technique": "N/A", "warm_up": "2-4", "sets": 1, "reps": "6-8", "rir": [0], "rest": "2-3 min", "substitutions": ["Smith Squat", "BB Squat"], "notes": "Lower feet for quad focus. No back rounding." },
+            { "exercise": "Standing Calf Raise", "technique": "Lengthened Partials (Extend Set)", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Leg Press Calf Press", "Donkey Calf Raise"], "notes": "1-2s pause at bottom." }
+          ]
+        },
+        {
+          "day_type": "Arms/Delts",
+          "exercises": [
+            { "exercise": "Bayesian Cable Curl", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "6-8", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Incline DB Curl", "Standing DB Curl"], "notes": "Optional lean forward. Deep stretch." },
+            { "exercise": "Overhead Cable Triceps Extension", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Overhead DB Extension", "Skull Crusher"], "notes": "Deep stretch on triceps." },
+            { "exercise": "Modified Zottman Curl", "technique": "N/A", "warm_up": "0-1", "sets": 1, "reps": "8-10", "rir": [0], "rest": "1-2 min", "substitutions": ["DB Hammer Curl", "Preacher Hammer Curl"], "notes": "Hammer up, supinated down." },
+            { "exercise": "Cable Triceps Kickback", "technique": "Two Drop Sets (~25% per)", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Seated Dip Machine", "Close-Grip Dip"], "notes": "Upper arm behind torso." },
+            { "exercise": "DB Wrist Curl", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Cable Wrist Curl", "N/A"], "notes": "Smooth controlled reps." },
+            { "exercise": "DB Wrist Extension", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["Cable Wrist Extension", "N/A"], "notes": "Smooth controlled reps." },
+            { "exercise": "Alternating DB Curl", "technique": "Two Drop Sets (~25% per)", "warm_up": "0-1", "sets": 1, "reps": "6-8", "rir": [0], "rest": "1-2 min", "substitutions": ["BB Curl", "EZ-Bar Curl"], "notes": "Slow controlled reps." },
+            { "exercise": "Machine Lateral Raise", "technique": "Myo-reps", "warm_up": "0-1", "sets": 2, "reps": "8-10", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["High-Cable Lateral Raise", "DB Lateral Raise"], "notes": "Squeeze side delt." },
+            { "exercise": "Dead Hang (optional)", "technique": "N/A", "warm_up": "0-1", "sets": 2, "reps": "N/A", "rir": [0, 0], "rest": "1-2 min", "substitutions": ["N/A", "N/A"], "notes": "Add seconds each week." }
+          ]
+        }
+      ]
+    }
+  ]
 }

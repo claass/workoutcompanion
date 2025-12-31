@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Layer Test - Min-Max Companion</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #1a1a1a;
+      color: #e0e0e0;
+    }
+    h1 { color: #4CAF50; }
+    h2 { color: #2196F3; margin-top: 30px; }
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover { background: #45a049; }
+    #output {
+      background: #2a2a2a;
+      padding: 15px;
+      border-radius: 4px;
+      margin-top: 10px;
+      white-space: pre-wrap;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      max-height: 500px;
+      overflow-y: auto;
+    }
+    .success { color: #4CAF50; }
+    .error { color: #f44336; }
+  </style>
+</head>
+<body>
+  <h1>Data Layer Test Suite</h1>
+
+  <h2>Program Module Tests</h2>
+  <button onclick="testGetWeek()">Test getWeek()</button>
+  <button onclick="testGetDay()">Test getDay()</button>
+  <button onclick="testGetAllWeeks()">Test getAllWeeks()</button>
+  <button onclick="testGetWeekLabel()">Test getWeekLabel()</button>
+  <button onclick="testSearchExercises()">Test searchExercises()</button>
+
+  <h2>Storage Module Tests</h2>
+  <button onclick="testSaveWorkout()">Test saveWorkout()</button>
+  <button onclick="testGetWorkoutHistory()">Test getWorkoutHistory()</button>
+  <button onclick="testGetLastPerformance()">Test getLastPerformance()</button>
+  <button onclick="testGetStats()">Test getStats()</button>
+  <button onclick="testExportData()">Test exportData()</button>
+  <button onclick="testClearData()">Test clearAllData()</button>
+
+  <div id="output"></div>
+
+  <script type="module">
+    import * as program from './js/program.js';
+    import * as storage from './js/storage.js';
+
+    // Make functions available globally for button onclick
+    window.program = program;
+    window.storage = storage;
+
+    const output = document.getElementById('output');
+
+    function log(message, type = 'info') {
+      const timestamp = new Date().toLocaleTimeString();
+      const className = type === 'error' ? 'error' : type === 'success' ? 'success' : '';
+      output.innerHTML += `<span class="${className}">[${timestamp}] ${message}</span>\n`;
+      output.scrollTop = output.scrollHeight;
+    }
+
+    // Program Module Tests
+    window.testGetWeek = async function() {
+      try {
+        log('Testing getWeek(1)...');
+        const week = await program.getWeek(1);
+        log(`✓ Success: Found week with ${week.days.length} days`, 'success');
+        log(JSON.stringify(week, null, 2));
+      } catch (error) {
+        log(`✗ Error: ${error.message}`, 'error');
+      }
+    };
+
+    window.testGetDay = async function() {
+      try {
+        log('Testing getDay(1, "Full Body")...');
+        const day = await program.getDay(1, 'Full Body');
+        log(`✓ Success: Found day with ${day.exercises.length} exercises`, 'success');
+        log(JSON.stringify(day.exercises.map(e => e.exercise), null, 2));
+      } catch (error) {
+        log(`✗ Error: ${error.message}`, 'error');
+      }
+    };
+
+    window.testGetAllWeeks = async function() {
+      try {
+        log('Testing getAllWeeks()...');
+        const weeks = await program.getAllWeeks();
+        log(`✓ Success: Found ${weeks.length} weeks`, 'success');
+        weeks.forEach(w => {
+          log(`  Week ${w.week} (${w.label}): ${w.dayTypes.join(', ')}`);
+        });
+      } catch (error) {
+        log(`✗ Error: ${error.message}`, 'error');
+      }
+    };
+
+    window.testGetWeekLabel = async function() {
+      try {
+        log('Testing getWeekLabel()...');
+        const label1 = await program.getWeekLabel(1);
+        const label2 = await program.getWeekLabel(2);
+        log(`✓ Success: Week 1 = "${label1}", Week 2 = "${label2}"`, 'success');
+      } catch (error) {
+        log(`✗ Error: ${error.message}`, 'error');
+      }
+    };
+
+    window.testSearchExercises = async function() {
+      try {
+        log('Testing searchExercises("curl")...');
+        const results = await program.searchExercises('curl');
+        log(`✓ Success: Found ${results.length} exercises`, 'success');
+        results.slice(0, 5).forEach(r => {
+          log(`  ${r.weekLabel} - ${r.dayType}: ${r.exercise.exercise}`);
+        });
+      } catch (error) {
+        log(`✗ Error: ${error.message}`, 'error');
+      }
+    };
+
+    // Storage Module Tests
+    window.testSaveWorkout = function() {
+      try {
+        log('Testing saveWorkout()...');
+        const testData = {
+          exercises: [
+            {
+              name: 'Lying Leg Curl',
+              sets: [
+                { weight: 80, reps: 8, logged: true },
+                { weight: 80, reps: 7, logged: true }
+              ]
+            }
+          ]
+        };
+        const key = storage.saveWorkout(1, 'Full Body', testData);
+        log(`✓ Success: Workout saved with key: ${key}`, 'success');
+      } catch (error) {
+        log(`✗ Error: ${error.message}`, 'error');
+      }
+    };
+
+    window.testGetWorkoutHistory = function() {
+      try {
+        log('Testing getWorkoutHistory()...');
+        const history = storage.getWorkoutHistory();
+        const keys = Object.keys(history);
+        log(`✓ Success: Found ${keys.length} workouts`, 'success');
+        log(JSON.stringify(history, null, 2));
+      } catch (error) {
+        log(`✗ Error: ${error.message}`, 'error');
+      }
+    };
+
+    window.testGetLastPerformance = function() {
+      try {
+        log('Testing getLastPerformance("Lying Leg Curl")...');
+        const perf = storage.getLastPerformance('Lying Leg Curl');
+        if (perf) {
+          log(`✓ Success: Found performance data`, 'success');
+          log(JSON.stringify(perf, null, 2));
+        } else {
+          log('✓ No previous performance data found (expected if no workouts saved)', 'success');
+        }
+      } catch (error) {
+        log(`✗ Error: ${error.message}`, 'error');
+      }
+    };
+
+    window.testGetStats = function() {
+      try {
+        log('Testing getStats()...');
+        const stats = storage.getStats();
+        log(`✓ Success:`, 'success');
+        log(JSON.stringify(stats, null, 2));
+      } catch (error) {
+        log(`✗ Error: ${error.message}`, 'error');
+      }
+    };
+
+    window.testExportData = function() {
+      try {
+        log('Testing exportData()...');
+        storage.exportData();
+        log('✓ Success: Export initiated (check your downloads)', 'success');
+      } catch (error) {
+        log(`✗ Error: ${error.message}`, 'error');
+      }
+    };
+
+    window.testClearData = function() {
+      log('Testing clearAllData()...');
+      const result = storage.clearAllData();
+      if (result) {
+        log('✓ Data cleared successfully', 'success');
+      } else {
+        log('✓ Clear cancelled by user', 'success');
+      }
+    };
+
+    // Run initial test
+    log('=== Data Layer Test Suite Ready ===');
+    log('Click buttons above to test individual functions\n');
+  </script>
+</body>
+</html>
